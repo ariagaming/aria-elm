@@ -1,0 +1,14 @@
+@import "./scss/reset.scss";
+@import "./scss/typography.scss";
+@import "./scss/page.scss";
+@import "./scss/page-sheet.scss";
+@import "./scss/content.scss";
+@import "./scss/fa/fontawesome.scss";
+@import "./scss/fa/fa-solid.scss";
+@import "./scss/fa/fa-regular.scss";
+@import "./scss/fa/fa-brands.scss";
+body {
+  background: lightgrey; //padding-top: 1rem;
+  font-size: 12px;
+  font-family: fantasy;
+}
