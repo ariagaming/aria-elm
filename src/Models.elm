@@ -3,9 +3,21 @@ module Models exposing (..)
 {- The message type being passed to the update function -}
 
 
+type alias Name =
+    String
+
+
 type Msg
     = NoOp
+    | BuySkill Source Name
+    | Edit String
     | ChangeMessage String
+
+
+type alias Model =
+    { character : Character
+    , message : Maybe String
+    }
 
 
 type AttributeType

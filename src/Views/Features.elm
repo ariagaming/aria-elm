@@ -1,22 +1,20 @@
-module Views.Skills exposing (..)
+module Views.Features exposing (..)
 
 import Html exposing (Html, Attribute, text, div, span, img, input, label)
 import Html.Attributes exposing (class, style)
-import Html.Events exposing (onClick)
 import Models exposing (..)
 import List exposing (map)
 import Views.General exposing (content, boughtIndicator)
 
 
-renderSkills : Skills -> Html Msg
-renderSkills (Skills skills) =
-    div [ class "content-skills" ]
-        [ content "Skills"
+renderFeatures : Features -> Html Msg
+renderFeatures (Features features) =
+    div [ class "content-feats" ]
+        [ content "Features"
             (map
-                (\(Skill s) ->
+                (\(Feature s) ->
                     div
                         [ class "content-row"
-                        , onClick (BuySkill Gift s.name)
                         ]
                         [ span [ style [ ( "flex-basis", "20%" ) ] ]
                             [ boughtIndicator s.boughtFrom
@@ -38,6 +36,6 @@ renderSkills (Skills skills) =
                             [ text s.title ]
                         ]
                 )
-                skills
+                features
             )
         ]

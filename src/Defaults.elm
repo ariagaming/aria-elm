@@ -57,9 +57,9 @@ features =
 makeSkill : { name : String, title : String, attribute : AttributeType } -> Skill
 makeSkill { name, title, attribute } =
     Skill
-        { boughtFrom = RacialPackage
+        { boughtFrom = None
         , boughtXP = 0
-        , expertiseFrom = ProfessionalPackage
+        , expertiseFrom = None
         , expertiseXP = 0
         , base = 0
         , race = 0
@@ -99,15 +99,15 @@ skills =
     ]
 
 
-makeStat : { name : String, title : String, stat : StatisticType } -> Statistic
-makeStat { name, title, stat } =
+makeStat : { name : String, title : String, stat : StatisticType, base : Int } -> Statistic
+makeStat { name, title, stat, base } =
     Statistic
-        { base = 0
+        { base = base
         , race = 0
         , profession = 0
         , equipment = 0
         , bonus = 0
-        , total = 0
+        , total = round (toFloat base / 10)
         , name = name
         , title = title
         , stat = stat
@@ -116,10 +116,10 @@ makeStat { name, title, stat } =
 
 statistics : List Statistic
 statistics =
-    [ makeStat { name = "Stength", title = "Stength", stat = Strength }
-    , makeStat { name = "Agility", title = "Agility", stat = Agility }
-    , makeStat { name = "Intuition", title = "Intuition", stat = Intuition }
-    , makeStat { name = "Perception", title = "Perception", stat = Perception }
+    [ makeStat { name = "Stength", title = "Stength", stat = Strength, base = 12 }
+    , makeStat { name = "Agility", title = "Agility", stat = Agility, base = 30 }
+    , makeStat { name = "Intuition", title = "Intuition", stat = Intuition, base = 1 }
+    , makeStat { name = "Perception", title = "Perception", stat = Perception, base = 5 }
     ]
 
 

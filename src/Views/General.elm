@@ -1,21 +1,25 @@
 module Views.General exposing (..)
 
-import Html exposing (Html, Attribute, text, div, img, input, label)
+import Html exposing (Html, Attribute, text, div, img, input, label, i)
 import Html.Attributes exposing (class)
+import Html.Events exposing (onClick)
 import Svg exposing (svg, circle)
 import Svg.Attributes exposing (height, width, cx, cy, r, fill, stroke)
 import Models exposing (..)
 
 
-content : String -> String -> List (Html Msg) -> Html Msg
-content title className children =
+content : String -> List (Html Msg) -> Html Msg
+content title children =
     let
         c =
             children
                 ++ [ div [ class "title" ] [ text title ]
+                   , div [ class "nav-button", onClick (Edit title) ]
+                        [ i [ class "fas fa-pencil-alt" ] []
+                        ]
                    ]
     in
-        div [ class ("content " ++ className) ] c
+        div [ class "content" ] c
 
 
 checkedCircle : Bool -> Html Msg
@@ -57,15 +61,33 @@ boughtIndicator boughtFrom =
             ]
 
 
+contentStatic : { title : String, value : String, prefix : String, postfix : String } -> Html Msg
+contentStatic { title, value, prefix, postfix } =
+    div [ class "content" ]
+        [ div
+            [ class "content-static" ]
+            [ div [ class "title" ] [ text title ]
+            , div [ class "value" ]
+                [ div [ class "prefix" ] [ text prefix ]
+                , div [ class "value-number" ] [ text value ]
+                , div [ class "postfix" ] [ text postfix ]
+                ]
+            ]
+        ]
 
--- const Circle = ({ checked }) => (
---   <svg height="10" width="12">
---     <circle
---       cx="6"
---       cy="5"
---       r="4"
---       fill={checked ? "black" : "white"}
---       stroke="black"
---     />
---   </svg>
+
+
+-- export const ContentStatistic = ({
+--   title = "movement",
+--   value = 100,
+--   prefix = "+",
+--   postfix = "%"
+-- }) => (
+--   <Content className="content-statistic" title={title}>
+--     <div className="value">
+--       <div className="prefix">{prefix}</div>
+--       <div className="value-number">{value}</div>
+--       <div className="postfix">{postfix}</div>
+--     </div>
+--   </Content>
 -- );

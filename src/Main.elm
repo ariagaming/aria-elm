@@ -5,16 +5,16 @@ import Html.Attributes exposing (class, attribute)
 import Html.Events exposing (onInput)
 import Defaults exposing (defaultCharacter)
 import Models exposing (..)
+import Views.General exposing (contentStatic)
+import Views.Info exposing (renderCharacterInfo)
 import Views.Skills exposing (renderSkills)
+import Views.Features exposing (renderFeatures)
+import Views.Statistics exposing (renderStatistics)
+import Domain exposing (buySkill)
+import Update exposing (update)
 
 
 ---- MODEL ----
-
-
-type alias Model =
-    { character : Character
-    , message : Maybe String
-    }
 
 
 init : ( Model, Cmd Msg )
@@ -24,25 +24,6 @@ init =
       }
     , Cmd.none
     )
-
-
-
----- UPDATE ----
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        ChangeMessage s ->
-            case s of
-                "" ->
-                    ( { model | message = Nothing }, Cmd.none )
-
-                _ ->
-                    ( { model | message = Just s }, Cmd.none )
-
-        _ ->
-            ( model, Cmd.none )
 
 
 
@@ -65,11 +46,20 @@ view { character, message } =
     in
         div [ class "page-container" ]
             [ div [ class "page", attribute "data-size" "A4" ]
-                [ h1 []
-                    [ text c.name
-                    ]
+                [ renderCharacterInfo character
+                , renderStatistics c.statistics
                 , renderSkills c.skills
-                , formField "something" ChangeMessage
+                , renderFeatures c.features
+                ]
+            , div [ class "secondary-statistics" ]
+                [ contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
                 ]
             , div [ class "page", attribute "data-size" "A4" ] []
             , div [ class "page", attribute "data-size" "A4" ] []
