@@ -7,7 +7,7 @@
 
 .character-statistics {
   position: relative;
-  top: 15px;
+  top: 5px;
   left: 0;
   width: 75px; }
   .character-statistics img {
@@ -15,8 +15,8 @@
 
 .secondary-statistics {
   position: absolute;
-  top: 211px;
-  left: 127px;
+  top: 219px;
+  left: 144px;
   right: 20px;
   width: 636px;
   min-width: 636px;
@@ -63,8 +63,11 @@
 
 .content-languages {
   position: relative;
-  top: 1rem;
-  width: 160px; }
+  top: 2rem;
+  width: 160px;
+  height: 180px; }
+  .content-languages .content {
+    height: 100%; }
 
 .content-resistances {
   position: absolute;
@@ -76,14 +79,19 @@
   position: absolute;
   top: 453px;
   left: 200px;
-  width: 160px; }
+  width: 160px;
+  height: 416px; }
+  .content-skills .content {
+    height: 100%; }
 
 .content-professions {
   position: absolute;
-  top: 831px;
+  top: 886px;
   left: 200px;
   width: 160px;
-  height: 206px; }
+  height: 180px; }
+  .content-professions .content {
+    height: 100%; }
 
 .right-side {
   position: absolute;

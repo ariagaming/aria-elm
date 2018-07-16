@@ -1,22 +1,20 @@
-module Views.Skills exposing (..)
+module Views.Professions exposing (..)
 
 import Html exposing (Html, Attribute, text, div, span, img, input, label)
 import Html.Attributes exposing (class, style)
-import Html.Events exposing (onClick)
 import Models exposing (..)
 import List exposing (map)
 import Views.General exposing (content, boughtIndicator)
 
 
-renderSkills : Skills -> Html Msg
-renderSkills (Skills skills) =
-    div [ class "content-skills" ]
-        [ content "Skills"
+renderProfessions : Professions -> Html Msg
+renderProfessions (Professions professions) =
+    div [ class "content-professions" ]
+        [ content "Professions"
             (map
-                (\(Skill s) ->
+                (\(Profession s) ->
                     div
                         [ class "content-row"
-                        , onClick (BuySkill RacialPackage s.name)
                         ]
                         [ span [ style [ ( "flex-basis", "20%" ) ] ]
                             [ boughtIndicator s.boughtFrom
@@ -38,6 +36,6 @@ renderSkills (Skills skills) =
                             [ text s.title ]
                         ]
                 )
-                skills
+                professions
             )
         ]

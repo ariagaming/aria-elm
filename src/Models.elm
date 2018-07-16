@@ -127,11 +127,55 @@ type Weapons
 type Resistance
     = Resistance
         { name : String
+        , title : String
+        , stat : StatisticType
+        , boughtFrom : Source
+        , boughtXP : Int
+        , expertiseFrom : Source
+        , expertiseXP : Int
+        , base : Int
+        , race : Int
+        , profession : Int
+        , equipment : Int
+        , bonus : Int
+        , total : Int
         }
 
 
 type Resistances
     = Resistances (List Resistance)
+
+
+type alias DefaultModel =
+    { name : String
+    , title : String
+    , boughtFrom : Source
+    , boughtXP : Int
+    , expertiseFrom : Source
+    , expertiseXP : Int
+    , base : Int
+    , race : Int
+    , profession : Int
+    , equipment : Int
+    , bonus : Int
+    , total : Int
+    }
+
+
+type Language
+    = Language DefaultModel
+
+
+type Languages
+    = Languages (List Language)
+
+
+type Profession
+    = Profession DefaultModel
+
+
+type Professions
+    = Professions (List Profession)
 
 
 type Character
@@ -140,4 +184,7 @@ type Character
         , statistics : Statistics
         , skills : Skills
         , features : Features
+        , resistances : Resistances
+        , languages : Languages
+        , professions : Professions
         }

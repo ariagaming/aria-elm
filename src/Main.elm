@@ -10,6 +10,9 @@ import Views.Info exposing (renderCharacterInfo)
 import Views.Skills exposing (renderSkills)
 import Views.Features exposing (renderFeatures)
 import Views.Statistics exposing (renderStatistics)
+import Views.Resistance exposing (renderResistances)
+import Views.Languages exposing (renderLanguages)
+import Views.Professions exposing (renderProfessions)
 import Domain exposing (buySkill)
 import Update exposing (update)
 
@@ -48,18 +51,21 @@ view { character, message } =
             [ div [ class "page", attribute "data-size" "A4" ]
                 [ renderCharacterInfo character
                 , renderStatistics c.statistics
-                , renderSkills c.skills
                 , renderFeatures c.features
+                , renderLanguages c.languages
+                , renderResistances c.resistances
+                , renderSkills c.skills
+                , renderProfessions c.professions
                 ]
             , div [ class "secondary-statistics" ]
-                [ contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
-                , contentStatic { title = "hp", value = "21", prefix = "+", postfix = "%" }
+                [ contentStatic { title = "hp", value = "25", prefix = "", postfix = "" }
+                , contentStatic { title = "ap", value = "12", prefix = "", postfix = "" }
+                , contentStatic { title = "expertise", value = "1", prefix = "+", postfix = "" }
+                , contentStatic { title = "movement", value = "12", prefix = "", postfix = "ft" }
+                , contentStatic { title = "initiative", value = "0", prefix = "1", postfix = "" }
+                , contentStatic { title = "armor", value = "0", prefix = "", postfix = "%" }
+                , contentStatic { title = "aura", value = "5", prefix = "", postfix = "%" }
+                , contentStatic { title = "ac", value = "0", prefix = "", postfix = "" }
                 ]
             , div [ class "page", attribute "data-size" "A4" ] []
             , div [ class "page", attribute "data-size" "A4" ] []

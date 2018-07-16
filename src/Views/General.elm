@@ -45,10 +45,10 @@ boughtIndicator boughtFrom =
                     "white"
 
                 RacialPackage ->
-                    "orange"
+                    "rgba(1, 188, 213, 1.000)"
 
                 ProfessionalPackage ->
-                    "maroon"
+                    "rgba(254, 64, 129, 1.000)"
 
                 XP ->
                     "black"
@@ -63,15 +63,13 @@ boughtIndicator boughtFrom =
 
 contentStatic : { title : String, value : String, prefix : String, postfix : String } -> Html Msg
 contentStatic { title, value, prefix, postfix } =
-    div [ class "content" ]
-        [ div
-            [ class "content-static" ]
-            [ div [ class "title" ] [ text title ]
-            , div [ class "value" ]
-                [ div [ class "prefix" ] [ text prefix ]
-                , div [ class "value-number" ] [ text value ]
-                , div [ class "postfix" ] [ text postfix ]
-                ]
+    div
+        [ class "content content-statistic" ]
+        [ div [ class "title" ] [ text title ]
+        , div [ class "value" ]
+            [ div [ class "prefix" ] [ text prefix ]
+            , div [ class "value-number" ] [ text value ]
+            , div [ class "postfix" ] [ text postfix ]
             ]
         ]
 

@@ -19,10 +19,14 @@
     position: absolute;
     bottom: -9px;
     right: 2px;
-    font-size: 24px;
+    font-size: 20px;
     color: pink;
     visibility: hidden;
     z-index: 999; }
+    .content .nav-button:hover {
+      cursor: pointer; }
+    .content .nav-button:active {
+      color: #ff8da1; }
   .content:hover .nav-button {
     visibility: visible; }
 
@@ -40,7 +44,8 @@
     height: 35px; }
     .content-statistic .value .prefix,
     .content-statistic .value .postfix {
-      margin: 3px; }
+      margin: 3px;
+      font-size: 12px; }
     .content-statistic .value .value-number {
       font-size: 25px; }
     .content-statistic .value > {

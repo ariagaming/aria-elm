@@ -123,6 +123,67 @@ statistics =
     ]
 
 
+makeResistance : { name : String, title : String, stat : StatisticType } -> Resistance
+makeResistance { name, title, stat } =
+    Resistance
+        { base = 0
+        , race = 0
+        , profession = 0
+        , equipment = 0
+        , bonus = 0
+        , total = 0
+        , name = name
+        , title = title
+        , stat = stat
+        , boughtFrom = None
+        , boughtXP = 0
+        , expertiseFrom = None
+        , expertiseXP = 0
+        }
+
+
+resistances : List Resistance
+resistances =
+    [ makeResistance { name = "Fire & Heat", title = "Fire & Heat", stat = Strength }
+    , makeResistance { name = "Cold & Ice", title = "Cold & Ice", stat = Strength }
+    , makeResistance { name = "Poison & Disease", title = "Poison & Disease", stat = Strength }
+    , makeResistance { name = "Holy", title = "Holy", stat = Strength }
+    , makeResistance { name = "Mental", title = "Mental", stat = Strength }
+    , makeResistance { name = "Demonic", title = "Demonic", stat = Strength }
+    , makeResistance { name = "Necromantic", title = "Necromantic", stat = Strength }
+    ]
+
+
+makeLanguage : { name : String, title : String } -> DefaultModel
+makeLanguage { name, title } =
+    { base = 0
+    , race = 0
+    , profession = 0
+    , equipment = 0
+    , bonus = 0
+    , total = 0
+    , name = name
+    , title = title
+    , boughtFrom = None
+    , boughtXP = 0
+    , expertiseFrom = None
+    , expertiseXP = 0
+    }
+
+
+languages : List Language
+languages =
+    [ Language <| makeLanguage { name = "Common", title = "Common" }
+    ]
+
+
+professions : List Profession
+professions =
+    [ Profession <| makeLanguage { name = "Merchant", title = "Merchant" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Merchant" }
+    ]
+
+
 defaultCharacter : Character
 defaultCharacter =
     Character
@@ -130,6 +191,9 @@ defaultCharacter =
         , statistics = Statistics statistics
         , features = Features features
         , skills = Skills skills
+        , resistances = Resistances resistances
+        , languages = Languages languages
+        , professions = Professions professions
         }
 
 

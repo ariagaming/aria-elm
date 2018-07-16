@@ -20,10 +20,16 @@
         position: absolute;
         bottom: -9px;
         right: 2px;
-        font-size: 24px;
+        font-size: 20px;
         color: pink;
         visibility: hidden;
         z-index: 999;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            color: darken(pink, 10%);
+        }
     }
     &:hover {
         .nav-button {
@@ -47,6 +53,7 @@
         .prefix,
         .postfix {
             margin: 3px;
+            font-size: 12px;
         }
         .value-number {
             font-size: 25px;
