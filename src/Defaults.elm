@@ -180,7 +180,50 @@ languages =
 professions : List Profession
 professions =
     [ Profession <| makeLanguage { name = "Merchant", title = "Merchant" }
-    , Profession <| makeLanguage { name = "Merchant", title = "Merchant" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Sailor" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Armorer" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Medic" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Lawyer" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Agent" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Stagehand" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Miner" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Researcher" }
+    , Profession <| makeLanguage { name = "Merchant", title = "Apothecary" }
+    ]
+
+
+makeArmor : { location : ArmorLocation } -> Armor
+makeArmor { location } =
+    Armor
+        { name = ""
+        , description = ""
+        , location = location
+        , str = 0
+        , agi = 0
+        , inu = 0
+        , per = 0
+        , feats = []
+        , resistances = []
+        , skills = []
+        , professions = []
+        }
+
+
+armors : List Armor
+armors =
+    [ makeArmor { location = Face }
+    , makeArmor { location = Head }
+    , makeArmor { location = Neck }
+    , makeArmor { location = Shoulders }
+    , makeArmor { location = Body }
+    , makeArmor { location = Torso }
+    , makeArmor { location = Arms }
+    , makeArmor { location = Hands }
+    , makeArmor { location = Legs }
+    , makeArmor { location = RingLeft }
+    , makeArmor { location = RingRight }
+    , makeArmor { location = Waist }
+    , makeArmor { location = Feet }
     ]
 
 
@@ -194,6 +237,8 @@ defaultCharacter =
         , resistances = Resistances resistances
         , languages = Languages languages
         , professions = Professions professions
+        , armors = Armors armors
+        , weapons = Weapons []
         }
 
 

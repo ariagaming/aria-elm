@@ -103,8 +103,8 @@ body {
 
 .secondary-statistics {
   position: absolute;
-  top: 219px;
-  left: 144px;
+  top: 205px;
+  left: 127px;
   right: 20px;
   width: 636px;
   min-width: 636px;
@@ -118,6 +118,28 @@ body {
   min-width: 0;
   /* NEW; needed for Firefox */ }
   .secondary-statistics .content {
+    overflow: hidden;
+    /* NEW */
+    min-width: 0;
+    /* NEW; needed for Firefox */ }
+
+.combat-statistics {
+  position: absolute;
+  top: 695px;
+  left: 377px;
+  right: 20px;
+  width: 636px;
+  min-width: 636px;
+  max-width: 636px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-columns: 1fr;
+  grid-gap: 3px;
+  min-height: 0;
+  /* NEW */
+  min-width: 0;
+  /* NEW; needed for Firefox */ }
+  .combat-statistics .content {
     overflow: hidden;
     /* NEW */
     min-width: 0;
@@ -181,6 +203,36 @@ body {
   .content-professions .content {
     height: 100%; }
 
+.content-equipment {
+  position: absolute;
+  left: 385px;
+  top: 300px;
+  width: 371px; }
+  .content-equipment .equipment-row {
+    border-bottom: 1px solid gray; }
+    .content-equipment .equipment-row:not(:first-child) {
+      margin-top: 5px; }
+    .content-equipment .equipment-row .location {
+      text-transform: uppercase; }
+
+.content-weapons {
+  position: absolute;
+  left: 377px;
+  top: 772px;
+  width: 397px;
+  height: 150px; }
+  .content-weapons .content {
+    height: 100%; }
+
+.content-specials {
+  position: absolute;
+  left: 377px;
+  top: 928px;
+  width: 397px;
+  height: 137px; }
+  .content-specials .content {
+    height: 100%; }
+
 .right-side {
   position: absolute;
   top: 300px;
@@ -216,6 +268,13 @@ body {
     min-height: 160px; }
   .right-side .specials {
     min-height: 160px; }
+
+.sword {
+  position: absolute;
+  top: 330px;
+  left: 65px;
+  height: 145px;
+  transform: rotate(-53deg); }
 
 .content {
   position: relative;

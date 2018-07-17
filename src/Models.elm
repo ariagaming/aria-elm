@@ -41,6 +41,22 @@ type StatisticType
     | Agility
 
 
+type ArmorLocation
+    = Face
+    | Head
+    | Neck
+    | Shoulders
+    | Body
+    | Torso
+    | Arms
+    | Hands
+    | Legs
+    | RingLeft
+    | RingRight
+    | Waist
+    | Feet
+
+
 type Skill
     = Skill
         { name : String
@@ -178,6 +194,26 @@ type Professions
     = Professions (List Profession)
 
 
+type Armor
+    = Armor
+        { name : String
+        , description : String
+        , location : ArmorLocation
+        , str : Int
+        , agi : Int
+        , inu : Int
+        , per : Int
+        , feats : List ( String, Int )
+        , resistances : List ( String, Int )
+        , skills : List ( String, Int )
+        , professions : List ( String, Int )
+        }
+
+
+type Armors
+    = Armors (List Armor)
+
+
 type Character
     = Character
         { name : String
@@ -187,4 +223,6 @@ type Character
         , resistances : Resistances
         , languages : Languages
         , professions : Professions
+        , armors : Armors
+        , weapons : Weapons
         }

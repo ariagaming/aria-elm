@@ -2,6 +2,7 @@ module Views.Statistics exposing (..)
 
 import Html exposing (Html, Attribute, text, div, span, img, input, label)
 import Html.Attributes exposing (class, style, src)
+import Views.General exposing (contentStatic)
 import Models exposing (..)
 import Maybe exposing (Maybe(Just, Nothing), andThen, withDefault)
 
@@ -83,3 +84,30 @@ renderStatistics (Statistics statistics) =
                     [ text <| toString per.base ]
                 ]
             ]
+
+
+renderSecondaryStatistics : Character -> Html Msg
+renderSecondaryStatistics (Character c) =
+    div
+        [ class "secondary-statistics" ]
+        [ contentStatic { title = "hp", value = "25", prefix = "", postfix = "" }
+        , contentStatic { title = "ap", value = "12", prefix = "", postfix = "" }
+        , contentStatic { title = "expertise", value = "1", prefix = "+", postfix = "" }
+        , contentStatic { title = "movement", value = "12", prefix = "", postfix = "ft" }
+        , contentStatic { title = "initiative", value = "0", prefix = "1", postfix = "" }
+        , contentStatic { title = "armor", value = "0", prefix = "", postfix = "%" }
+        , contentStatic { title = "aura", value = "5", prefix = "", postfix = "%" }
+        , contentStatic { title = "ac", value = "0", prefix = "", postfix = "" }
+        ]
+
+
+renderCombatStatistics : Character -> Html Msg
+renderCombatStatistics (Character c) =
+    div
+        [ class "combat-statistics" ]
+        [ contentStatic { title = "ap offense", value = "3", prefix = "-", postfix = "" }
+        , contentStatic { title = "ap defense", value = "3", prefix = "-", postfix = "" }
+        , contentStatic { title = "ap recovery", value = "4", prefix = "+", postfix = "" }
+        , contentStatic { title = "dmg per ap", value = "1", prefix = "+", postfix = "" }
+        , contentStatic { title = "def. per ap", value = "1", prefix = "-", postfix = "" }
+        ]
