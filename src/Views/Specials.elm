@@ -21,4 +21,5 @@ renderSpecials (Specials specials) =
                 )
                 specials
             )
+            Nothing
         ]

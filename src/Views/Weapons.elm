@@ -21,4 +21,5 @@ renderWeapons (Weapons weapons) =
                 )
                 weapons
             )
+            (Just WeaponsDialog)
         ]

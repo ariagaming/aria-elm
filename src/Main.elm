@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, attribute, src)
 import Html.Events exposing (onInput)
 import Defaults exposing (defaultCharacter)
 import Models exposing (..)
+import Components.Dialog exposing (dialog)
 import Views.General exposing (contentStatic)
 import Views.Info exposing (renderCharacterInfo)
 import Views.Skills exposing (renderSkills)
@@ -31,6 +32,10 @@ init : ( Model, Cmd Msg )
 init =
     ( { character = defaultCharacter
       , message = Nothing
+      , dialogs =
+            { weapons = False
+            , resistances = False
+            }
       }
     , Cmd.none
     )
@@ -49,7 +54,7 @@ formField l m =
 
 
 view : Model -> Html Msg
-view { character, message } =
+view { character, dialogs } =
     let
         (Character c) =
             character
@@ -72,6 +77,8 @@ view { character, message } =
                 ]
             , div [ class "page", attribute "data-size" "A4" ] []
             , div [ class "page", attribute "data-size" "A4" ] []
+            , dialog dialogs.weapons "Weapons" WeaponsDialog
+            , dialog dialogs.resistances "Resistances" ResistancesDialog
             ]
 
 

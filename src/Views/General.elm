@@ -6,15 +6,16 @@ import Html.Events exposing (onClick)
 import Svg exposing (svg, circle)
 import Svg.Attributes exposing (height, width, cx, cy, r, fill, stroke)
 import Models exposing (..)
+import Maybe exposing (withDefault)
 
 
-content : String -> List (Html Msg) -> Html Msg
-content title children =
+content : String -> List (Html Msg) -> Maybe Dialogs -> Html Msg
+content title children d =
     let
         c =
             children
                 ++ [ div [ class "title" ] [ text title ]
-                   , div [ class "nav-button", onClick (Edit title) ]
+                   , div [ class "nav-button", onClick (HideDialog <| withDefault NoDialog d) ]
                         [ i [ class "fas fa-pencil-alt" ] []
                         ]
                    ]

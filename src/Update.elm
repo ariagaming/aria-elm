@@ -7,13 +7,28 @@ import Domain exposing (buySkill)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ChangeMessage s ->
-            case s of
-                "" ->
-                    ( { model | message = Nothing }, Cmd.none )
+        HideDialog dialog ->
+            let
+                oldDialog =
+                    model.dialogs
+            in
+                case dialog of
+                    WeaponsDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | weapons = not oldDialog.weapons }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
 
-                _ ->
-                    ( { model | message = Just s }, Cmd.none )
+                    ResistancesDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | resistances = not oldDialog.resistances }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    _ ->
+                        ( model, Cmd.none )
 
         BuySkill source name ->
             let

@@ -10,7 +10,8 @@
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
   position: relative;
   padding: 2rem;
-  width: 80%;
+  width: 21cm;
+  height: 29.7cm;
 }
 
 .page[data-size="A4"] {
@@ -68,15 +69,19 @@
   }
   .main-menu,
   .sheet-menu {
-    visibility: hidden;
+    display: none !important;
   }
   .character-sheet {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   .content {
     .nav-button {
-      display: none;
+      display: none !important;
     }
+  }
+  .hidden-dialog,
+  .dialog {
+    display: none !important;
   }
 }

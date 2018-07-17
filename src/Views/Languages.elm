@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, style)
 import Models exposing (..)
 import List exposing (map)
 import Views.General exposing (content, boughtIndicator)
+import Maybe exposing (Maybe(..))
 
 
 renderLanguages : Languages -> Html Msg
@@ -38,4 +39,5 @@ renderLanguages (Languages languages) =
                 )
                 languages
             )
+            Nothing
         ]

@@ -38,4 +38,5 @@ renderResistances (Resistances resistances) =
                 )
                 resistances
             )
+            (Just ResistancesDialog)
         ]

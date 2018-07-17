@@ -40,4 +40,5 @@ renderSkills (Skills skills) =
                 )
                 skills
             )
+            Nothing
         ]

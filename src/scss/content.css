@@ -22,7 +22,7 @@
     font-size: 20px;
     color: pink;
     visibility: hidden;
-    z-index: 999; }
+    z-index: 100; }
     .content .nav-button:hover {
       cursor: pointer; }
     .content .nav-button:active {

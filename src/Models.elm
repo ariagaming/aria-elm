@@ -11,13 +11,24 @@ type Msg
     = NoOp
     | BuySkill Source Name
     | Edit String
+    | HideDialog Dialogs
     | ChangeMessage String
 
 
 type alias Model =
     { character : Character
     , message : Maybe String
+    , dialogs :
+        { weapons : Bool
+        , resistances : Bool
+        }
     }
+
+
+type Dialogs
+    = WeaponsDialog
+    | ResistancesDialog
+    | NoDialog
 
 
 type AttributeType

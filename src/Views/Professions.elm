@@ -38,4 +38,5 @@ renderProfessions (Professions professions) =
                 )
                 professions
             )
+            Nothing
         ]
