@@ -15,7 +15,7 @@ content title children d =
         c =
             children
                 ++ [ div [ class "title" ] [ text title ]
-                   , div [ class "nav-button", onClick (HideDialog <| withDefault NoDialog d) ]
+                   , div [ class "nav-button", onClick (ToggleDialog <| withDefault NoDialog d) ]
                         [ i [ class "fas fa-pencil-alt" ] []
                         ]
                    ]

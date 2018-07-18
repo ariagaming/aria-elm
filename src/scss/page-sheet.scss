@@ -1,238 +1,285 @@
 .character-sheet {
-  padding-top: 5em;
-  padding-bottom: 5em;
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
 
 .character-info {
-  img {
-    width: 100%;
-  }
+    position: absolute;
+    right: 2rem;
+    left: 2rem;
+    img {
+        width: 100%;
+    }
+    .profession {
+        position: absolute;
+        top: 75px;
+        left: 246px;
+    }
+    .xp {
+        position: absolute;
+        top: 75px;
+        left: 660px;
+    }
+    .specialization {
+        position: absolute;
+        top: 75px;
+        left: 424px;
+    }
+    .race {
+        position: absolute;
+        top: 120px;
+        left: 246px;
+    }
+    .alignment {
+        position: absolute;
+        top: 120px;
+        left: 424px;
+    }
+    .player-name {
+        position: absolute;
+        top: 120px;
+        left: 616px;
+    }
+    .character-name {
+        position: absolute;
+        top: 97px;
+        left: 10px;
+        font-size: 26px;
+        text-align: center;
+        width: 213px;
+    }
+    &>.trigger {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .character-statistics {
-  position: relative;
-  top: 5px;
-  left: 0;
-  width: 75px;
-  img {
-    width: 100%;
-  }
+    position: relative;
+    top: 173px; // 5
+    left: 0;
+    width: 75px;
+    img {
+        width: 100%;
+    }
 }
 
 .secondary-statistics {
-  position: absolute;
-  top: 205px;
-  left: 127px;
-  right: 20px;
-  width: 636px;
-  min-width: 636px;
-  max-width: 636px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-auto-columns: 1fr;
-  grid-gap: 3px;
-  min-height: 0;
-  /* NEW */
-  min-width: 0;
-  /* NEW; needed for Firefox */
-  .content {
-    overflow: hidden;
+    position: absolute;
+    top: 205px;
+    left: 127px;
+    right: 20px;
+    width: 636px;
+    min-width: 636px;
+    max-width: 636px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-columns: 1fr;
+    grid-gap: 3px;
+    min-height: 0;
     /* NEW */
     min-width: 0;
     /* NEW; needed for Firefox */
-  }
+    .content {
+        overflow: hidden;
+        /* NEW */
+        min-width: 0;
+        /* NEW; needed for Firefox */
+    }
 }
 
 .combat-statistics {
-  position: absolute;
-  top: 695px;
-  left: 377px;
-  right: 20px;
-  width: 397px;
-  min-width: 397px;
-  max-width: 397px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-columns: 1fr;
-  grid-gap: 3px;
-  min-height: 0;
-  /* NEW */
-  min-width: 0;
-  /* NEW; needed for Firefox */
-  .content {
-    overflow: hidden;
+    position: absolute;
+    top: 695px;
+    left: 377px;
+    right: 20px;
+    width: 390px;
+    min-width: 397px;
+    max-width: 397px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-columns: 1fr;
+    grid-gap: 3px;
+    min-height: 0;
     /* NEW */
     min-width: 0;
     /* NEW; needed for Firefox */
-  }
+    .content {
+        overflow: hidden;
+        /* NEW */
+        min-width: 0;
+        /* NEW; needed for Firefox */
+    }
 }
 
 .character-statistic {
-  .total {
-    font-size: 20px;
-  }
-  .calculated {
-    margin-top: 4px;
-  }
-  &.str,
-  &.agi,
-  &.inu,
-  &.per {
-    position: absolute;
-    top: 17px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  &.agi {
-    top: 98px;
-  }
-  &.inu {
-    top: 178px;
-  }
-  &.per {
-    top: 258px;
-  }
+    .total {
+        font-size: 20px;
+    }
+    .calculated {
+        margin-top: 4px;
+    }
+    &.str,
+    &.agi,
+    &.inu,
+    &.per {
+        position: absolute;
+        top: 17px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &.agi {
+        top: 98px;
+    }
+    &.inu {
+        top: 178px;
+    }
+    &.per {
+        top: 258px;
+    }
 }
 
 .content-feats {
-  position: relative;
-  top: 1rem;
-  width: 160px; //   font-size: 10px;
-  //   padding: 0 0.5rem 1rem 0.5rem;
+    position: relative;
+    top: 180px;
+    width: 160px; //   font-size: 10px;
+    //   padding: 0 0.5rem 1rem 0.5rem;
 }
 
 .content-languages {
-  position: relative;
-  top: 2rem;
-  width: 160px;
-  height: 180px;
-  .content {
-    height: 100%;
-  }
+    position: relative;
+    top: 198px;
+    width: 160px;
+    height: 180px;
+    .content {
+        height: 100%;
+    }
 }
 
 .content-resistances {
-  position: absolute;
-  top: 300px;
-  left: 200px;
-  width: 160px; //   font-size: 10px;
-  //   padding: 0 0.5rem 1rem 0.5rem;
+    position: absolute;
+    top: 300px;
+    left: 205px;
+    width: 160px; //   font-size: 10px;
+    //   padding: 0 0.5rem 1rem 0.5rem;
 }
 
 .content-skills {
-  position: absolute;
-  top: 453px;
-  left: 200px;
-  width: 160px;
-  height: 416px;
-  .content {
-    height: 100%;
-  }
+    position: absolute;
+    top: 453px;
+    left: 205px;
+    width: 160px;
+    height: 416px;
+    .content {
+        height: 100%;
+    }
 }
 
 .content-professions {
-  position: absolute;
-  top: 886px;
-  left: 200px;
-  width: 160px;
-  height: 180px;
-  .content {
-    height: 100%;
-  }
+    position: absolute;
+    top: 886px;
+    left: 205px;
+    width: 160px;
+    height: 180px;
+    .content {
+        height: 100%;
+    }
 }
 
 .content-equipment {
-  position: absolute;
-  left: 385px;
-  top: 300px;
-  width: 371px;
-  .equipment-row {
-    border-bottom: 1px solid gray;
-    &:not(:first-child) {
-      margin-top: 5px;
+    position: absolute;
+    left: 380px;
+    top: 300px;
+    width: 380px;
+    font-size: 10px;
+    .equipment-row {
+        border-bottom: 1px solid gray;
+        &:not(:first-child) {
+            margin-top: 5px;
+        }
+        .location {
+            text-transform: uppercase;
+        }
     }
-    .location {
-      text-transform: uppercase;
+    &:hover {
+        .nav-button {
+            visibility: visible;
+        }
     }
-  }
-  &:hover {
-    .nav-button {
-      visibility: visible;
-    }
-  }
 }
 
 .content-weapons {
-  position: absolute;
-  left: 377px;
-  top: 772px;
-  width: 397px;
-  height: 150px;
-  .content {
-    height: 100%;
-  }
+    position: absolute;
+    left: 377px;
+    top: 772px;
+    width: 390px;
+    height: 150px;
+    .content {
+        height: 100%;
+    }
 }
 
 .content-specials {
-  position: absolute;
-  left: 377px;
-  top: 928px;
-  width: 397px;
-  height: 137px;
-  .content {
-    height: 100%;
-  }
+    position: absolute;
+    left: 377px;
+    top: 928px;
+    width: 390px;
+    height: 137px;
+    .content {
+        height: 100%;
+    }
 }
 
 .right-side {
-  position: absolute;
-  top: 300px;
-  left: 368px;
-  width: 395px;
-  height: 738px;
-  display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  justify-content: flex-start;
-  .equipment {
-    height: 346px;
-    .content-row {
-      display: flex;
-      align-content: flex-start;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 0;
-      margin: 0;
-      div {
-        margin-right: 4px;
-        &:first-child {
-          width: 65px;
+    position: absolute;
+    top: 300px;
+    left: 368px;
+    width: 395px;
+    height: 738px;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: flex-start;
+    .equipment {
+        height: 346px;
+        .content-row {
+            display: flex;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0;
+            margin: 0;
+            div {
+                margin-right: 4px;
+                &:first-child {
+                    width: 65px;
+                }
+                &:nth-child(2) {
+                    font-weight: bolder;
+                }
+            }
         }
-        &:nth-child(2) {
-          font-weight: bolder;
-        }
-      }
     }
-  }
-  .dmg-information {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-columns: 1fr;
-    grid-gap: auto;
-    flex-direction: row;
-  }
-  .weapons {
-    min-height: 160px;
-  }
-  .specials {
-    min-height: 160px;
-  }
+    .dmg-information {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-columns: 1fr;
+        grid-gap: auto;
+        flex-direction: row;
+    }
+    .weapons {
+        min-height: 160px;
+    }
+    .specials {
+        min-height: 160px;
+    }
 }
 
 .sword {
-  position: absolute;
-  top: 330px;
-  left: 65px;
-  height: 145px;
-  transform: rotate(-53deg);
+    position: absolute;
+    top: 330px;
+    left: 65px;
+    height: 145px;
+    transform: rotate(-53deg);
 }

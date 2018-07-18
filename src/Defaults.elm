@@ -1,6 +1,7 @@
 module Defaults exposing (..)
 
 import Models exposing (..)
+import Dict exposing (..)
 
 
 {-
@@ -227,6 +228,19 @@ armors =
     ]
 
 
+weapons : List Weapon
+weapons =
+    [ Weapon
+        { name = "Dagger"
+        , description = Nothing
+        , numberOfDice = 1
+        , diceSides = 4
+        , constant = 0
+        , attributes = Dict.fromList []
+        }
+    ]
+
+
 defaultCharacter : Character
 defaultCharacter =
     Character
@@ -238,7 +252,8 @@ defaultCharacter =
         , languages = Languages languages
         , professions = Professions professions
         , armors = Armors armors
-        , weapons = Weapons []
+        , weapons = Weapons weapons
+        , xp = Just 20
         }
 
 

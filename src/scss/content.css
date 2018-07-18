@@ -3,7 +3,7 @@
   background: transparent;
   border: 8px solid;
   border-image: url("/assets/content-border.png") 50;
-  border-image-repeat: round;
+  border-image-repeat: stretch;
   border-image-width: 8px;
   font-size: 10px;
   padding: 0 0.2rem 1rem 0.2rem; }

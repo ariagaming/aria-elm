@@ -20,8 +20,9 @@ import Views.Resistance exposing (renderResistances)
 import Views.Languages exposing (renderLanguages)
 import Views.Professions exposing (renderProfessions)
 import Views.Equipment exposing (renderEquipment)
-import Views.Weapons exposing (renderWeapons)
+import Views.Weapons exposing (renderWeapons, weaponsDialog)
 import Views.Specials exposing (renderSpecials)
+import Views.RacialPackage exposing (raceDialog)
 import Update exposing (update)
 
 
@@ -41,6 +42,7 @@ init =
             , languages = False
             , equipment = False
             , specials = False
+            , raceDialog = False
             }
       }
     , Cmd.none
@@ -51,14 +53,6 @@ init =
 ---- VIEW ----
 
 
-formField : String -> (String -> Msg) -> Html Msg
-formField l m =
-    div []
-        [ input [ onInput m ] []
-        , label [] [ text l ]
-        ]
-
-
 view : Model -> Html Msg
 view { character, dialogs } =
     let
@@ -66,6 +60,9 @@ view { character, dialogs } =
             character
     in
         div [ class "page-container" ]
+            {-
+               The main character sheet page
+            -}
             [ div [ class "page", attribute "data-size" "A4" ]
                 [ renderCharacterInfo character
                 , renderStatistics c.statistics
@@ -75,22 +72,27 @@ view { character, dialogs } =
                 , renderSkills c.skills
                 , renderProfessions c.professions
                 , img [ class "sword", src "/assets/sword.png" ] []
-                , renderSecondaryStatistics (Character c)
+                , renderSecondaryStatistics character
                 , renderEquipment c.armors
-                , renderCombatStatistics (Character c)
+                , renderCombatStatistics character
                 , renderWeapons c.weapons
                 , renderSpecials (Specials [])
                 ]
             , div [ class "page", attribute "data-size" "A4" ] []
             , div [ class "page", attribute "data-size" "A4" ] []
-            , dialog dialogs.weapons "Weapons" WeaponsDialog
-            , dialog dialogs.resistances "Resistances" ResistancesDialog
-            , dialog dialogs.skills "Skills" SkillsDialog
-            , dialog dialogs.professions "Professions" ProfessionsDialog
-            , dialog dialogs.features "Features" FeaturesDialog
-            , dialog dialogs.languages "Languages" LanguagesDialog
-            , dialog dialogs.specials "Specials" SpecialsDialog
-            , dialog dialogs.equipment "Equipment" EquipmentDialog
+
+            {-
+               Dialogs
+            -}
+            , weaponsDialog dialogs.weapons c.weapons
+            , dialog dialogs.resistances "Resistances" ResistancesDialog Nothing
+            , dialog dialogs.skills "Skills" SkillsDialog Nothing
+            , dialog dialogs.professions "Professions" ProfessionsDialog Nothing
+            , dialog dialogs.features "Features" FeaturesDialog Nothing
+            , dialog dialogs.languages "Languages" LanguagesDialog Nothing
+            , dialog dialogs.specials "Specials" SpecialsDialog Nothing
+            , dialog dialogs.equipment "Equipment" EquipmentDialog Nothing
+            , raceDialog dialogs.raceDialog
             ]
 
 

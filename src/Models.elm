@@ -1,5 +1,8 @@
 module Models exposing (..)
 
+import Dict exposing (Dict)
+
+
 {- The message type being passed to the update function -}
 
 
@@ -11,7 +14,7 @@ type Msg
     = NoOp
     | BuySkill Source Name
     | Edit String
-    | HideDialog Dialogs
+    | ToggleDialog Dialogs
     | ChangeMessage String
 
 
@@ -27,6 +30,7 @@ type alias Model =
         , languages : Bool
         , specials : Bool
         , equipment : Bool
+        , raceDialog : Bool
         }
     }
 
@@ -40,6 +44,7 @@ type Dialogs
     | SpecialsDialog
     | LanguagesDialog
     | EquipmentDialog
+    | RacialPackageDialog
     | NoDialog
 
 
@@ -82,7 +87,7 @@ type ArmorLocation
 
 type Skill
     = Skill
-        { name : String
+        { name : Name
         , title : String
         , attribute : AttributeType
         , stat : StatisticType
@@ -153,9 +158,20 @@ type Statistics
     = Statistics (List Statistic)
 
 
+type WeaponType
+    = Ranged
+    | Melee
+    | Magic
+
+
 type Weapon
     = Weapon
         { name : String
+        , description : Maybe String
+        , numberOfDice : Int
+        , diceSides : Int
+        , constant : Int
+        , attributes : Dict String String
         }
 
 
@@ -237,6 +253,10 @@ type Armors
     = Armors (List Armor)
 
 
+type alias XP =
+    Int
+
+
 type Character
     = Character
         { name : String
@@ -248,4 +268,5 @@ type Character
         , professions : Professions
         , armors : Armors
         , weapons : Weapons
+        , xp : Maybe XP
         }

@@ -7,7 +7,7 @@ import Domain exposing (buySkill)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        HideDialog dialog ->
+        ToggleDialog dialog ->
             let
                 oldDialog =
                     model.dialogs
@@ -66,6 +66,13 @@ update msg model =
                         let
                             newDialog =
                                 { oldDialog | equipment = not oldDialog.equipment }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    RacialPackageDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | raceDialog = not oldDialog.raceDialog }
                         in
                             ( { model | dialogs = newDialog }, Cmd.none )
 

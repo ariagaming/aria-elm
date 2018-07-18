@@ -32,7 +32,7 @@ renderEquipment (Armors armors) =
                 )
                 armors
             )
-                :> div [ class "nav-button", onClick (HideDialog EquipmentDialog) ]
+                :> div [ class "nav-button", onClick (ToggleDialog EquipmentDialog) ]
                     [ i [ class "fas fa-pencil-alt" ] [] ]
     in
         div
