@@ -15,18 +15,6 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap; }
-  .content .nav-button {
-    position: absolute;
-    bottom: -9px;
-    right: 2px;
-    font-size: 20px;
-    color: pink;
-    visibility: hidden;
-    z-index: 100; }
-    .content .nav-button:hover {
-      cursor: pointer; }
-    .content .nav-button:active {
-      color: #ff8da1; }
   .content:hover .nav-button {
     visibility: visible; }
 
@@ -69,3 +57,16 @@
 
 .content-row:hover {
   background: #f6f6f6; }
+
+.nav-button {
+  position: absolute;
+  bottom: -9px;
+  right: 2px;
+  font-size: 20px;
+  color: pink;
+  visibility: hidden;
+  z-index: 100; }
+  .nav-button:hover {
+    cursor: pointer; }
+  .nav-button:active {
+    color: #ff8da1; }

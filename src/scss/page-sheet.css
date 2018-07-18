@@ -126,6 +126,8 @@
       margin-top: 5px; }
     .content-equipment .equipment-row .location {
       text-transform: uppercase; }
+  .content-equipment:hover .nav-button {
+    visibility: visible; }
 
 .content-weapons {
   position: absolute;
