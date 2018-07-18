@@ -40,5 +40,5 @@ renderSkills (Skills skills) =
                 )
                 skills
             )
-            Nothing
+            (Just SkillsDialog)
         ]

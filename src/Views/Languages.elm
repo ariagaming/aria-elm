@@ -39,5 +39,5 @@ renderLanguages (Languages languages) =
                 )
                 languages
             )
-            Nothing
+            (Just LanguagesDialog)
         ]

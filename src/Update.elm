@@ -27,6 +27,48 @@ update msg model =
                         in
                             ( { model | dialogs = newDialog }, Cmd.none )
 
+                    ProfessionsDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | professions = not oldDialog.professions }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    SkillsDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | skills = not oldDialog.skills }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    FeaturesDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | features = not oldDialog.features }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    LanguagesDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | languages = not oldDialog.languages }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    SpecialsDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | specials = not oldDialog.specials }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
+                    EquipmentDialog ->
+                        let
+                            newDialog =
+                                { oldDialog | equipment = not oldDialog.equipment }
+                        in
+                            ( { model | dialogs = newDialog }, Cmd.none )
+
                     _ ->
                         ( model, Cmd.none )
 

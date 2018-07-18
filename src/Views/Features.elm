@@ -38,5 +38,5 @@ renderFeatures (Features features) =
                 )
                 features
             )
-            Nothing
+            (Just FeaturesDialog)
         ]

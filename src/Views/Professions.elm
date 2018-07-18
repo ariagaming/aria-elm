@@ -38,5 +38,5 @@ renderProfessions (Professions professions) =
                 )
                 professions
             )
-            Nothing
+            (Just ProfessionsDialog)
         ]

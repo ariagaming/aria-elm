@@ -35,6 +35,12 @@ init =
       , dialogs =
             { weapons = False
             , resistances = False
+            , skills = False
+            , features = False
+            , professions = False
+            , languages = False
+            , equipment = False
+            , specials = False
             }
       }
     , Cmd.none
@@ -79,6 +85,12 @@ view { character, dialogs } =
             , div [ class "page", attribute "data-size" "A4" ] []
             , dialog dialogs.weapons "Weapons" WeaponsDialog
             , dialog dialogs.resistances "Resistances" ResistancesDialog
+            , dialog dialogs.skills "Skills" SkillsDialog
+            , dialog dialogs.professions "Professions" ProfessionsDialog
+            , dialog dialogs.features "Features" FeaturesDialog
+            , dialog dialogs.languages "Languages" LanguagesDialog
+            , dialog dialogs.specials "Specials" SpecialsDialog
+            , dialog dialogs.equipment "Equipment" EquipmentDialog
             ]
 
 

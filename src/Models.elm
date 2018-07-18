@@ -21,6 +21,12 @@ type alias Model =
     , dialogs :
         { weapons : Bool
         , resistances : Bool
+        , skills : Bool
+        , features : Bool
+        , professions : Bool
+        , languages : Bool
+        , specials : Bool
+        , equipment : Bool
         }
     }
 
@@ -28,6 +34,12 @@ type alias Model =
 type Dialogs
     = WeaponsDialog
     | ResistancesDialog
+    | ProfessionsDialog
+    | SkillsDialog
+    | FeaturesDialog
+    | SpecialsDialog
+    | LanguagesDialog
+    | EquipmentDialog
     | NoDialog
 
 

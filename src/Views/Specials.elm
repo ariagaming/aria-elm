@@ -21,5 +21,5 @@ renderSpecials (Specials specials) =
                 )
                 specials
             )
-            Nothing
+            (Just SpecialsDialog)
         ]
